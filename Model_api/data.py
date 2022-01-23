@@ -21,8 +21,8 @@ def get_title_from_index(idi,flag):
     return animes[animes['mal_id'] == idi]['title_english'].values
 
 def get_data(anime):
-    index_T = animes[animes["title"] == anime]["mal_id"].values
-    index_TE = animes[animes["title_english"] == anime]["mal_id"].values
+    index_T = animes[animes["title"] == anime].index
+    index_TE = animes[animes["title_english"] == anime].index
     f = 0
     if len(index_T) == 1:
         distances = sorted(list(enumerate(similarity[index_T[0]])), reverse=True, key=lambda r: r[1])
@@ -40,16 +40,11 @@ def get_data(anime):
     i = 1
     h = pd.DataFrame(columns = animes.columns.to_list())
     while co <= 9 and i < len(distances):
-        if distances[i][1]*100 > 90:
-            inc = 3
-        else:
-            inc = 1
-
         title = get_title_from_index(distances[i][0],f)
         if len(title) == 1:
             h = h.append(animes[animes['title'] == title[0]], ignore_index = True)
             co += 1
-        i += inc
+        i += 1
 
     data={}
     dlist=[]
