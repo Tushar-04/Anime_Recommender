@@ -1,0 +1,4 @@
+Model_api/venv/
+anime_recommender_react_app/node_modules/
+Model_api/animes_dict.pkl
+Model_api/similarity.pkl

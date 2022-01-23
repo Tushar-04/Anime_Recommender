@@ -1,0 +1,21 @@
+.back-image{
+    background-image:
+    linear-gradient(to bottom, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8)),
+    url('./Images/anime-features-2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:60vh;
+    width: 100%;
+    margin:auto;
+
+}
+.h1-pad{
+    padding-top: 100px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.h4-pad{
+    padding : 15px;
+}
